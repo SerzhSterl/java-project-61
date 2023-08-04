@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Cli;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -6,6 +8,7 @@ import java.util.Scanner;
 public class Even {
     public static void startEvenGame() {
 
+        int randBound = 100;
         var gameSteps = 3;
         String rightAnswer;
         String userAnswer;
@@ -16,11 +19,10 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < gameSteps; i++) {
-            var number = random.nextInt(100);
+            var number = random.nextInt(randBound);
 
             System.out.println("Question: " + number);
             rightAnswer = (number % 2 == 0) ? "yes" : "no";
-
             System.out.print("Your answer: ");
             userAnswer = console.nextLine();
             System.out.println(userAnswer);
