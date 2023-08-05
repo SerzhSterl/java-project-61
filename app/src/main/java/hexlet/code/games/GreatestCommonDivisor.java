@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class GreatestCommonDivisor {
     public static void startGreatestCommonDivisor() {
 
-        int randBound = 20;
+        int randBound = 100;
         var gameSteps = 3;
         int rightAnswer;
         int userAnswer;
