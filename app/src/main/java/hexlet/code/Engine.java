@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GreatestCommonDivisor;
 
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class Engine {
         var greet = 1;
         var even = 2;
         var calc = 3;
+        var gcd = 4;
 
         Scanner console = new Scanner(System.in);
         var gameNumber = console.nextInt();
@@ -28,6 +30,10 @@ public class Engine {
         if (gameNumber == calc) {
             Cli.greeting();
             Calc.startCalcGame();
+        }
+        if (gameNumber == gcd) {
+            Cli.greeting();
+            GreatestCommonDivisor.startGreatestCommonDivisor();
         }
     }
 }
