@@ -8,3 +8,6 @@ https://asciinema.org/a/600402
 
 Asciinema Calc-game.
 https://asciinema.org/a/KsiZYASpXY0pnPEBjj8lv8lzh
+
+Asciinema GCD-game.
+https://asciinema.org/a/TBrzoq1NQtVxTKZbFo8gzdtFv
