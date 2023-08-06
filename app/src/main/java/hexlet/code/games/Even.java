@@ -26,7 +26,6 @@ public class Even {
             rightAnswer = (number % 2 == 0) ? "yes" : "no";
             System.out.print("Your answer: ");
             userAnswer = console.nextLine();
-            System.out.println(userAnswer);
 
             if (rightAnswer.equalsIgnoreCase(userAnswer)) {
                 System.out.println("Correct!");

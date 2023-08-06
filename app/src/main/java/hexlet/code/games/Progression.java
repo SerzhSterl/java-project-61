@@ -53,7 +53,6 @@ public class Progression {
 
             System.out.print("Your answer: ");
             userAnswer = console.nextInt();
-            System.out.println(userAnswer);
 
             if (rightAnswer == userAnswer) {
                 System.out.println("Correct!");
@@ -64,7 +63,6 @@ public class Progression {
                 System.out.println("Let's try again, " + Cli.userName);
                 break;
             }
-            System.out.println("Congratulations, " + Cli.userName + "!");
         }
         if (stepsCounter == gameSteps) {
             System.out.println("Congratulations, " + Cli.userName + "!");

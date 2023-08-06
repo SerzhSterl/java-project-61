@@ -37,7 +37,6 @@ public class GreatestCommonDivisor {
 
             System.out.print("Your answer: ");
             userAnswer = console.nextInt();
-            System.out.println(userAnswer);
 
             if (rightAnswer == userAnswer) {
                 System.out.println("Correct!");

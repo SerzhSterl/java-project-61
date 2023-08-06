@@ -30,10 +30,10 @@ public class Calc {
                 rightAnswer = firstNumber + secondNumber;
                 System.out.print("Your answer: ");
                 userAnswer = console.nextInt();
-                System.out.println(userAnswer);
 
                 if (rightAnswer == userAnswer) {
                     System.out.println("Correct!");
+                    stepsCounter++;
                 } else {
                     System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
                             + "Correct answer was " + "'" + rightAnswer + "'");
@@ -46,10 +46,10 @@ public class Calc {
                 rightAnswer = firstNumber * secondNumber;
                 System.out.print("Your answer: ");
                 userAnswer = console.nextInt();
-                System.out.println(userAnswer);
 
                 if (rightAnswer == userAnswer) {
                     System.out.println("Correct!");
+                    stepsCounter++;
                 } else {
                     System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
                             + "Correct answer was " + "'" + rightAnswer + "'");
@@ -62,7 +62,6 @@ public class Calc {
                 rightAnswer = firstNumber - secondNumber;
                 System.out.print("Your answer: ");
                 userAnswer = console.nextInt();
-                System.out.println(userAnswer);
 
                 if (rightAnswer == userAnswer) {
                     System.out.println("Correct!");
