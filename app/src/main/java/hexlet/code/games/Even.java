@@ -9,7 +9,8 @@ public class Even {
     public static void startEvenGame() {
 
         int randBound = 100;
-        var gameSteps = 3;
+        int gameSteps = 3;
+        int stepsCounter = 0;
         String rightAnswer;
         String userAnswer;
 
@@ -29,12 +30,16 @@ public class Even {
 
             if (rightAnswer.equalsIgnoreCase(userAnswer)) {
                 System.out.println("Correct!");
+                stepsCounter++;
             } else {
-                System.out.println(userAnswer + " is wrong answer ;(. " + "Correct answer was " + rightAnswer);
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
+                        + "Correct answer was " + "'" + rightAnswer + "'");
                 System.out.println("Let's try again, " + Cli.userName);
                 break;
             }
         }
-        System.out.println("Congratulations, " + Cli.userName + "!");
+        if (stepsCounter == gameSteps) {
+            System.out.println("Congratulations, " + Cli.userName + "!");
+        }
     }
 }

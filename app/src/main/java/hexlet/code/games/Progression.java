@@ -12,6 +12,7 @@ public class Progression {
         int randBoundArray = 10;
         int gameSteps = 3;
         int arrSize = 10;
+        int stepsCounter = 0;
         int firstRandNumber;
         int firstRandNumberBound = 20;
         int randNumber;
@@ -56,14 +57,17 @@ public class Progression {
 
             if (rightAnswer == userAnswer) {
                 System.out.println("Correct!");
+                stepsCounter++;
             } else {
-                System.out.println("Your answer: " + userAnswer);
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
                         + "Correct answer was " + "'" + rightAnswer + "'");
                 System.out.println("Let's try again, " + Cli.userName);
                 break;
             }
+            System.out.println("Congratulations, " + Cli.userName + "!");
         }
-        System.out.println("Congratulations, " + Cli.userName + "!");
+        if (stepsCounter == gameSteps) {
+            System.out.println("Congratulations, " + Cli.userName + "!");
+        }
     }
 }

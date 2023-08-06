@@ -10,7 +10,8 @@ public class Calc {
 
         int randBound = 10;
         int boundNumberOfExpressions = 3;
-        var gameSteps = 3;
+        int gameSteps = 3;
+        int stepsCounter = 0;
         int rightAnswer;
         int userAnswer;
 
@@ -65,8 +66,9 @@ public class Calc {
 
                 if (rightAnswer == userAnswer) {
                     System.out.println("Correct!");
+                    stepsCounter++;
+
                 } else {
-                    System.out.println("Your answer: " + userAnswer);
                     System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
                             + "Correct answer was " + "'" + rightAnswer + "'");
                     System.out.println("Let's try again, " + Cli.userName);
@@ -74,6 +76,8 @@ public class Calc {
                 }
             }
         }
-        System.out.println("Congratulations, " + Cli.userName + "!");
+        if (stepsCounter == gameSteps) {
+            System.out.println("Congratulations, " + Cli.userName + "!");
+        }
     }
 }

@@ -9,7 +9,8 @@ public class GreatestCommonDivisor {
     public static void startGreatestCommonDivisor() {
 
         int randBound = 100;
-        var gameSteps = 3;
+        int gameSteps = 3;
+        int stepsCounter = 0;
         int rightAnswer;
         int userAnswer;
 
@@ -40,13 +41,16 @@ public class GreatestCommonDivisor {
 
             if (rightAnswer == userAnswer) {
                 System.out.println("Correct!");
+                stepsCounter++;
             } else {
-                System.out.println("Your answer: " + userAnswer);
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
                         + "Correct answer was " + "'" + rightAnswer + "'");
                 System.out.println("Let's try again, " + Cli.userName);
                 break;
             }
+        }
+        if (stepsCounter == gameSteps) {
+            System.out.println("Congratulations, " + Cli.userName + "!");
         }
     }
 }
