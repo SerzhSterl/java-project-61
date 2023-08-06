@@ -26,26 +26,27 @@ public class GreatestCommonDivisor {
             System.out.println("Question: " + firstNumber + " " + secondNumber);
 
             while (firstNumber != 0 && secondNumber != 0) {
-                if (firstNumber > secondNumber){
+                if (firstNumber > secondNumber) {
                     firstNumber = firstNumber % secondNumber;
                 } else {
                     secondNumber = secondNumber % firstNumber;
                 }
             }
-                rightAnswer = firstNumber + secondNumber;
+            rightAnswer = firstNumber + secondNumber;
 
-                System.out.print("Your answer: ");
-                userAnswer = console.nextInt();
-                System.out.println(userAnswer);
+            System.out.print("Your answer: ");
+            userAnswer = console.nextInt();
+            System.out.println(userAnswer);
 
-                if (rightAnswer == userAnswer) {
-                    System.out.println("Correct!");
-                } else {
-                    System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. " + "Correct answer was " + "'" + rightAnswer + "'");
-                    System.out.println("Let's try again, " + Cli.userName);
-                    break;
-                }
-
+            if (rightAnswer == userAnswer) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("Your answer: " + userAnswer);
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
+                        + "Correct answer was " + "'" + rightAnswer + "'");
+                System.out.println("Let's try again, " + Cli.userName);
+                break;
+            }
         }
     }
 }

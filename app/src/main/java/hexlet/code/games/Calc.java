@@ -24,7 +24,7 @@ public class Calc {
             var firstNumber = random.nextInt(randBound);
             var secondNumber = random.nextInt(randBound);
 
-            if (numberOfExpression == 0 ) {
+            if (numberOfExpression == 0) {
                 System.out.println("Question: " + firstNumber + "+" + secondNumber);
                 rightAnswer = firstNumber + secondNumber;
                 System.out.print("Your answer: ");
@@ -34,12 +34,13 @@ public class Calc {
                 if (rightAnswer == userAnswer) {
                     System.out.println("Correct!");
                 } else {
-                    System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. " + "Correct answer was " + "'" + rightAnswer + "'");
+                    System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
+                            + "Correct answer was " + "'" + rightAnswer + "'");
                     System.out.println("Let's try again, " + Cli.userName);
                     break;
                 }
             }
-            if (numberOfExpression == 1 ) {
+            if (numberOfExpression == 1) {
                 System.out.println("Question: " + firstNumber + "*" + secondNumber);
                 rightAnswer = firstNumber * secondNumber;
                 System.out.print("Your answer: ");
@@ -49,12 +50,13 @@ public class Calc {
                 if (rightAnswer == userAnswer) {
                     System.out.println("Correct!");
                 } else {
-                    System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. " + "Correct answer was " + "'" + rightAnswer + "'");
+                    System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
+                            + "Correct answer was " + "'" + rightAnswer + "'");
                     System.out.println("Let's try again, " + Cli.userName);
                     break;
                 }
             }
-            if (numberOfExpression == 2 ) {
+            if (numberOfExpression == 2) {
                 System.out.println("Question: " + firstNumber + "-" + secondNumber);
                 rightAnswer = firstNumber - secondNumber;
                 System.out.print("Your answer: ");
@@ -64,7 +66,9 @@ public class Calc {
                 if (rightAnswer == userAnswer) {
                     System.out.println("Correct!");
                 } else {
-                    System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. " + "Correct answer was " + "'" + rightAnswer + "'");
+                    System.out.println("Your answer: " + userAnswer);
+                    System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
+                            + "Correct answer was " + "'" + rightAnswer + "'");
                     System.out.println("Let's try again, " + Cli.userName);
                     break;
                 }
