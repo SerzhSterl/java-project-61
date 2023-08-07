@@ -1,10 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GreatestCommonDivisor;
-import hexlet.code.games.Progression;
-
+import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class Engine {
@@ -15,6 +11,7 @@ public class Engine {
         var calc = 3;
         var gcd = 4;
         var progression = 5;
+        var prime = 6;
 
         Scanner console = new Scanner(System.in);
         var gameNumber = console.nextInt();
@@ -40,5 +37,21 @@ public class Engine {
             Cli.greeting();
             Progression.startProgressionGame();
         }
+        if (gameNumber == prime) {
+            Cli.greeting();
+            Prime.startPrimeGame();
+        }
+    }
+    public static String isPrime(int number) {
+        if (number < 2) {
+            return "no";
+        }
+
+        for (int i = 2; i < number / 2; i++) {
+            if (number % i == 0) {
+                return "no";
+            }
+        }
+        return "yes";
     }
 }
