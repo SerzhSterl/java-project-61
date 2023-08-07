@@ -26,7 +26,7 @@ public class Calc {
             var secondNumber = random.nextInt(randBound);
 
             if (numberOfExpression == 0) {
-                System.out.println("Question: " + firstNumber + "+" + secondNumber);
+                System.out.println("Question: " + firstNumber + " + " + secondNumber);
                 rightAnswer = firstNumber + secondNumber;
                 System.out.print("Your answer: ");
                 userAnswer = console.nextInt();
@@ -42,7 +42,7 @@ public class Calc {
                 }
             }
             if (numberOfExpression == 1) {
-                System.out.println("Question: " + firstNumber + "*" + secondNumber);
+                System.out.println("Question: " + firstNumber + " * " + secondNumber);
                 rightAnswer = firstNumber * secondNumber;
                 System.out.print("Your answer: ");
                 userAnswer = console.nextInt();
@@ -58,7 +58,7 @@ public class Calc {
                 }
             }
             if (numberOfExpression == 2) {
-                System.out.println("Question: " + firstNumber + "-" + secondNumber);
+                System.out.println("Question: " + firstNumber + " - " + secondNumber);
                 rightAnswer = firstNumber - secondNumber;
                 System.out.print("Your answer: ");
                 userAnswer = console.nextInt();
