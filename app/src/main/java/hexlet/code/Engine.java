@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
     public static int gameSteps = 3;
 
-    public static void gameEngine(String questions[], int[] numbers) {
+    public static void gameEngine(String[] questions, int[] numbers) {
         String userAnswer;
         int stepsCounter = 0;
         Scanner console = new Scanner(System.in);
@@ -31,7 +31,7 @@ public class Engine {
             }
         }
     }
-    public static void gameEngine(int[] numbers, String questions[])  {
+    public static void gameEngine(int[] numbers, String[] questions)  {
         int userAnswer;
         int stepsCounter = 0;
         Scanner console = new Scanner(System.in);
