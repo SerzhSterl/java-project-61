@@ -1,57 +1,61 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class Engine {
-    public static void gameSelection() {
+    public static int gameSteps = 3;
 
-        var greet = 1;
-        var even = 2;
-        var calc = 3;
-        var gcd = 4;
-        var progression = 5;
-        var prime = 6;
-
+    public static void gameEngine(String questions[], int[] numbers) {
+        String userAnswer;
+        int stepsCounter = 0;
         Scanner console = new Scanner(System.in);
-        var gameNumber = console.nextInt();
 
-        System.out.println("Your choice: " + gameNumber);
+        for (int i = 0; i < gameSteps; i++) {
+            System.out.println("Question: " + numbers[i]);
+            System.out.print("Your answer: ");
+            userAnswer = console.nextLine();
 
-        if (gameNumber == greet) {
-            Cli.greeting();
-        }
-        if (gameNumber == even) {
-            Cli.greeting();
-            Even.startEvenGame();
-        }
-        if (gameNumber == calc) {
-            Cli.greeting();
-            Calc.startCalcGame();
-        }
-        if (gameNumber == gcd) {
-            Cli.greeting();
-            GreatestCommonDivisor.startGreatestCommonDivisor();
-        }
-        if (gameNumber == progression) {
-            Cli.greeting();
-            Progression.startProgressionGame();
-        }
-        if (gameNumber == prime) {
-            Cli.greeting();
-            Prime.startPrimeGame();
-        }
-    }
-    public static String isPrime(int number) {
-        if (number < 2) {
-            return "no";
-        }
+            if (questions[i].equalsIgnoreCase(userAnswer)) {
+                System.out.println("Correct!");
+                stepsCounter++;
 
-        for (int i = 2; i < number / 2; i++) {
-            if (number % i == 0) {
-                return "no";
+            } else {
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
+                        + "Correct answer was " + "'" + questions[i] + "'");
+                System.out.println("Let's try again, " + Cli.userName + "!");
+                break;
+            }
+
+            if (stepsCounter == gameSteps) {
+                System.out.println("Congratulations, " + Cli.userName + "!");
             }
         }
-        return "yes";
+    }
+    public static void gameEngine(int[] numbers, String questions[])  {
+        int userAnswer;
+        int stepsCounter = 0;
+        Scanner console = new Scanner(System.in);
+
+        for (int i = 0; i < gameSteps; i++) {
+            System.out.println("Question: " + questions[i]);
+            System.out.print("Your answer: ");
+
+            userAnswer = console.nextInt();
+
+            if (numbers[i] == userAnswer) {
+                System.out.println("Correct!");
+                stepsCounter++;
+
+            } else {
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
+                        + "Correct answer was " + "'" + numbers[i] + "'");
+                System.out.println("Let's try again, " + Cli.userName + "!");
+                break;
+            }
+
+            if (stepsCounter == gameSteps) {
+                System.out.println("Congratulations, " + Cli.userName + "!");
+            }
+        }
     }
 }

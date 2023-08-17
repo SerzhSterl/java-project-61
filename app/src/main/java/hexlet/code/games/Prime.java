@@ -2,46 +2,42 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
     public static void startPrimeGame() {
-
-        int randBound = 100;
-        int gameSteps = 3;
-        int stepsCounter = 0;
         String rightAnswer;
-        String userAnswer;
-
-        Random random = new Random();
-        Scanner console = new Scanner(System.in);
+        int randBound = 100;
+        int number;
 
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        for (int i = 0; i < gameSteps; i++) {
-            var number = random.nextInt(randBound);
+        String[] questions = new String[Engine.gameSteps];
+        int[] numbers = new int[Engine.gameSteps];
 
-            System.out.println("Question: " + number);
-            rightAnswer =  Engine.isPrime(number);
+        for (int i = 0; i < Engine.gameSteps; i++) {
 
-            System.out.print("Your answer: ");
-            userAnswer = console.nextLine();
+            number = Util.generateRandomNumbers(randBound);
+            numbers[i] = number;
+            rightAnswer = Prime.generateRightAnswer(number);
+            questions[i] = rightAnswer;
+        }
 
-            if (rightAnswer.equalsIgnoreCase(userAnswer)) {
-                System.out.println("Correct!");
-                stepsCounter++;
-            } else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
-                        + "Correct answer was " + "'" + rightAnswer + "'");
-                System.out.println("Let's try again, " + Cli.userName + "!");
-                break;
+        Engine.gameEngine(questions, numbers);
+    }
+    public static String generateRightAnswer(int number) {
+        if (number < 2) {
+            return "no";
+        }
+
+        for (int i = 2; i < number / 2; i++) {
+            if (number % i == 0) {
+                return "no";
             }
         }
-        if (stepsCounter == gameSteps) {
-            System.out.println("Congratulations, " + Cli.userName + "!");
-        }
-
+        return "yes";
     }
 }
