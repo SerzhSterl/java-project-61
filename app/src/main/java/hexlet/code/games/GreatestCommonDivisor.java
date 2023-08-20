@@ -3,16 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Util;
 
-import java.util.Random;
-import java.util.Scanner;
-
 public class GreatestCommonDivisor {
     public static void startGreatestCommonDivisor() {
 
         int randBound = 100;
 
         String[] questions = new String[Engine.gameSteps];
-        int[] numbers = new int[Engine.gameSteps];
+        String[] numbers = new String[Engine.gameSteps];
 
         System.out.println("Find the greatest common divisor of given numbers.");
 
@@ -23,7 +20,7 @@ public class GreatestCommonDivisor {
 
             String question =  firstNumber + " " + secondNumber;
 
-            numbers[i] = GreatestCommonDivisor.generateGCD(firstNumber, secondNumber);
+            numbers[i] = Integer.toString(GreatestCommonDivisor.generateGCD(firstNumber, secondNumber));
             questions[i] = question;
         }
         Engine.gameEngine(numbers, questions);

@@ -3,9 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Util;
 
-import java.util.Random;
-import java.util.Scanner;
-
 public class Prime {
     public static void startPrimeGame() {
         String rightAnswer;
@@ -15,23 +12,23 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         String[] questions = new String[Engine.gameSteps];
-        int[] numbers = new int[Engine.gameSteps];
+        String[] numbers = new String[Engine.gameSteps];
 
         for (int i = 0; i < Engine.gameSteps; i++) {
 
             number = Util.generateRandomNumbers(randBound);
-            numbers[i] = number;
-            rightAnswer = Prime.generateRightAnswer(number);
-            questions[i] = rightAnswer;
-        }
+            questions[i] = Integer.toString(number);
 
-        Engine.gameEngine(questions, numbers);
+            rightAnswer = Prime.generateRightAnswer(number);
+            numbers[i] = rightAnswer;
+
+        }
+        Engine.gameEngine(numbers, questions);
     }
     public static String generateRightAnswer(int number) {
         if (number < 2) {
             return "no";
         }
-
         for (int i = 2; i < number / 2; i++) {
             if (number % i == 0) {
                 return "no";

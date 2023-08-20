@@ -1,10 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Util;
-
-import java.util.Scanner;
 
 public class Progression {
     public static void startProgressionGame() {
@@ -19,7 +16,7 @@ public class Progression {
         int rightAnswer;
 
         String[] questions = new String[Engine.gameSteps];
-        int[] numbers = new int[Engine.gameSteps];
+        String[] numbers = new String[Engine.gameSteps];
 
         System.out.println("What number is missing in the progression?");
 
@@ -32,7 +29,7 @@ public class Progression {
 
             randNumber = Util.generateRandomNumbers(randBoundArray);
             rightAnswer = progressionArr[randNumber];
-            numbers[i] = rightAnswer;
+            numbers[i] = Integer.toString(rightAnswer);
 
             String[] progressionToString = new String[arrSize];
 
