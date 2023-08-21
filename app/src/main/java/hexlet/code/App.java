@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        var greet = 1;
-        var even = 2;
-        var calc = 3;
-        var gcd = 4;
-        var progression = 5;
-        var prime = 6;
+        final var greet = 1;
+        final var even = 2;
+        final var calc = 3;
+        final var gcd = 4;
+        final var progression = 5;
+        final var prime = 6;
 
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");

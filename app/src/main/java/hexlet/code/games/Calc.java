@@ -6,8 +6,8 @@ import hexlet.code.Util;
 public class Calc {
     public static void startCalcGame() {
 
-        int randBound = 10;
-        int boundNumberOfExpressions = 3;
+        final int randBound = 10;
+        final int boundNumberOfExpressions = 3;
         int rightAnswer;
 
         System.out.println("What is the result of the expression?");
@@ -42,6 +42,6 @@ public class Calc {
                 numbers[i] = Integer.toString(rightAnswer);
             }
         }
-       Engine.gameEngine(numbers, questions);
+        Engine.gameEngine(numbers, questions);
     }
 }

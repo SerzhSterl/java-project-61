@@ -6,7 +6,7 @@ import hexlet.code.Util;
 public class GreatestCommonDivisor {
     public static void startGreatestCommonDivisor() {
 
-        int randBound = 100;
+        final int randBound = 100;
 
         String[] questions = new String[Engine.gameSteps];
         String[] numbers = new String[Engine.gameSteps];

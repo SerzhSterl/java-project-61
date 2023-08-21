@@ -6,7 +6,7 @@ import hexlet.code.Util;
 public class Prime {
     public static void startPrimeGame() {
         String rightAnswer;
-        int randBound = 100;
+        final int randBound = 100;
         int number;
 
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");

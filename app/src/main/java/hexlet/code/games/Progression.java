@@ -6,11 +6,11 @@ import hexlet.code.Util;
 public class Progression {
     public static void startProgressionGame() {
 
-        int randBoundCoefficient = 20;
-        int randBoundArray = 10;
-        int arrSize = 10;
+        final int randBoundCoefficient = 20;
+        final int randBoundArray = 10;
+        final int arrSize = 10;
+        final int firstRandNumberBound = 20;
         int firstRandNumber;
-        int firstRandNumberBound = 20;
         int randNumber;
         int progressionCoefficient;
         int rightAnswer;

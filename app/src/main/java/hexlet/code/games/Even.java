@@ -6,7 +6,7 @@ import hexlet.code.Util;
 public class Even {
     public static void startEvenGame() {
         String rightAnswer;
-        int randBound = 100;
+        final int randBound = 100;
         int number;
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
