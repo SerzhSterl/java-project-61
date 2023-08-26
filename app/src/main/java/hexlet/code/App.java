@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GreatestCommonDivisor;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
@@ -31,23 +35,18 @@ public class App {
             Cli.greeting();
         }
         if (gameNumber == even) {
-            Cli.greeting();
             Even.startEvenGame();
         }
         if (gameNumber == calc) {
-            Cli.greeting();
             Calc.startCalcGame();
         }
         if (gameNumber == gcd) {
-            Cli.greeting();
             GreatestCommonDivisor.startGreatestCommonDivisor();
         }
         if (gameNumber == progression) {
-            Cli.greeting();
             Progression.startProgressionGame();
         }
         if (gameNumber == prime) {
-            Cli.greeting();
             Prime.startPrimeGame();
         }
     }

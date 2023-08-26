@@ -5,25 +5,22 @@ import hexlet.code.Util;
 
 public class GreatestCommonDivisor {
     public static void startGreatestCommonDivisor() {
-
+        final String exercise = "Find the greatest common divisor of given numbers.";
         final int randBound = 100;
 
-        String[] questions = new String[Engine.gameSteps];
-        String[] numbers = new String[Engine.gameSteps];
+        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS][2];
 
-        System.out.println("Find the greatest common divisor of given numbers.");
-
-        for (int i = 0; i < Engine.gameSteps; i++) {
+        for (int i = 0; i < Engine.GAME_STEPS; i++) {
 
             int firstNumber = Util.generateRandomNumbers(randBound) + 1;
             int secondNumber = Util.generateRandomNumbers(randBound) + 1;
 
             String question =  firstNumber + " " + secondNumber;
 
-            numbers[i] = Integer.toString(GreatestCommonDivisor.generateGCD(firstNumber, secondNumber));
-            questions[i] = question;
+            questionsAndAnswers[i][1] = Integer.toString(GreatestCommonDivisor.generateGCD(firstNumber, secondNumber));
+            questionsAndAnswers[i][0] = question;
         }
-        Engine.gameEngine(numbers, questions);
+        Engine.gameEngine(exercise, questionsAndAnswers);
     }
     public static int generateGCD(int firstNumber, int secondNumber) {
         int rightAnswer;

@@ -3,34 +3,38 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static final int gameSteps = 3;
+    public static final int GAME_STEPS = 3;
 
-    public static void gameEngine(String[] numbers, String[] questions)  {
+    public static void gameEngine(String exercise, String[][] questionsAndAnswers)  {
 
         String userAnswer;
-        int stepsCounter = 0;
+        String userName;
+
         Scanner console = new Scanner(System.in);
 
-        for (int i = 0; i < gameSteps; i++) {
-            System.out.println("Question: " + questions[i]);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+
+        userName = console.next();
+        System.out.println("Hello, " + userName + "!");
+        System.out.println(exercise);
+
+        for (int i = 0; i < GAME_STEPS; i++) {
+            System.out.println("Question: " + questionsAndAnswers[i][0]);
             System.out.print("Your answer: ");
 
             userAnswer = console.next();
 
-            if (numbers[i].equalsIgnoreCase(userAnswer)) {
-
+            if (userAnswer.equalsIgnoreCase(questionsAndAnswers[i][1])) {
                 System.out.println("Correct!");
-                stepsCounter++;
-
+                //stepsCounter++;
             } else {
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
-                        + "Correct answer was " + "'" + numbers[i] + "'");
-                System.out.println("Let's try again, " + Cli.userName + "!");
-                break;
-            }
-            if (stepsCounter == gameSteps) {
-                System.out.println("Congratulations, " + Cli.userName + "!");
+                        + "Correct answer was " + "'" + questionsAndAnswers[i][1] + "'");
+                System.out.println("Let's try again, " + userName + "!");
+                return;
             }
         }
+        System.out.println("Congratulations, " + userName + "!");
     }
 }

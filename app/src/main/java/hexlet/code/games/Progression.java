@@ -6,6 +6,8 @@ import hexlet.code.Util;
 public class Progression {
     public static void startProgressionGame() {
 
+        final String exercise = "What number is missing in the progression?";
+
         final int randBoundCoefficient = 20;
         final int randBoundArray = 10;
         final int arrSize = 10;
@@ -15,12 +17,9 @@ public class Progression {
         int progressionCoefficient;
         int rightAnswer;
 
-        String[] questions = new String[Engine.gameSteps];
-        String[] numbers = new String[Engine.gameSteps];
+        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS][2];
 
-        System.out.println("What number is missing in the progression?");
-
-        for (int i = 0; i < Engine.gameSteps; i++) {
+        for (int i = 0; i < Engine.GAME_STEPS; i++) {
 
             progressionCoefficient = Util.generateRandomNumbers(randBoundCoefficient);
             firstRandNumber = Util.generateRandomNumbers(firstRandNumberBound);
@@ -29,17 +28,17 @@ public class Progression {
 
             randNumber = Util.generateRandomNumbers(randBoundArray);
             rightAnswer = progressionArr[randNumber];
-            numbers[i] = Integer.toString(rightAnswer);
+            questionsAndAnswers[i][1] = Integer.toString(rightAnswer);
 
             String[] progressionToString = new String[arrSize];
 
             for (int j = 0; j < arrSize; j++) {
                 progressionToString[j] = String.valueOf(progressionArr[j]);
                 progressionToString[randNumber] = "..";
-                questions[i] = String.join(" ", progressionToString);
+                questionsAndAnswers[i][0] = String.join(" ", progressionToString);
             }
         }
-        Engine.gameEngine(numbers, questions);
+        Engine.gameEngine(exercise, questionsAndAnswers);
     }
     public static int[] generateProgression(int firstRandNumber, int progressionCoefficient, int arrSize) {
 

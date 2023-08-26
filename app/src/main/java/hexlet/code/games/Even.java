@@ -5,23 +5,22 @@ import hexlet.code.Util;
 
 public class Even {
     public static void startEvenGame() {
+        final String exercise = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String rightAnswer;
         final int randBound = 100;
         int number;
 
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS][2];
+       // String[] numbers = new String[Engine.GAME_STEPS];
 
-        String[] questions = new String[Engine.gameSteps];
-        String[] numbers = new String[Engine.gameSteps];
-
-        for (int i = 0; i < Engine.gameSteps; i++) {
+        for (int i = 0; i < Engine.GAME_STEPS; i++) {
             number = Util.generateRandomNumbers(randBound);
-            questions[i] = Integer.toString(number);
+            questionsAndAnswers[i][0] = Integer.toString(number);
 
             rightAnswer = Even.generateRightAnswer(number);
-            numbers[i] = rightAnswer;
+            questionsAndAnswers[i][1] = rightAnswer;
         }
-        Engine.gameEngine(numbers, questions);
+        Engine.gameEngine(exercise, questionsAndAnswers);
     }
     public static String generateRightAnswer(int number) {
         String rightAnswer;
