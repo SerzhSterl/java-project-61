@@ -4,23 +4,23 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class GreatestCommonDivisor {
+    final static String EXERCISE = "Find the greatest common divisor of given numbers.";
+    final static int RAND_BOUND = 100;
     public static void startGreatestCommonDivisor() {
-        final String exercise = "Find the greatest common divisor of given numbers.";
-        final int randBound = 100;
 
-        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
 
-        for (int i = 0; i < Engine.GAME_STEPS; i++) {
+        for (int i = 0; i < Engine.GAME_STEPS_COUNT; i++) {
 
-            int firstNumber = Util.generateRandomNumbers(randBound) + 1;
-            int secondNumber = Util.generateRandomNumbers(randBound) + 1;
+            int firstNumber = Util.generateRandomNumbers(RAND_BOUND) + 1;
+            int secondNumber = Util.generateRandomNumbers(RAND_BOUND) + 1;
 
             String question =  firstNumber + " " + secondNumber;
 
             questionsAndAnswers[i][1] = Integer.toString(GreatestCommonDivisor.generateGCD(firstNumber, secondNumber));
             questionsAndAnswers[i][0] = question;
         }
-        Engine.gameEngine(exercise, questionsAndAnswers);
+        Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
     public static int generateGCD(int firstNumber, int secondNumber) {
         int rightAnswer;

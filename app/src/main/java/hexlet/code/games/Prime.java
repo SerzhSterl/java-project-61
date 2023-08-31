@@ -4,33 +4,31 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Prime {
+    final static String EXERCISE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    final static int RAND_BOUND = 100;
     public static void startPrimeGame() {
-        final String exercise = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String rightAnswer;
-        final int randBound = 100;
-        int number;
 
-        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
 
-        for (int i = 0; i < Engine.GAME_STEPS; i++) {
+        for (int i = 0; i < Engine.GAME_STEPS_COUNT; i++) {
 
-            number = Util.generateRandomNumbers(randBound);
+            int number = Util.generateRandomNumbers(RAND_BOUND);
             questionsAndAnswers[i][0] = Integer.toString(number);
 
-            rightAnswer = Prime.generateRightAnswer(number);
+            String rightAnswer = generateRightAnswer(number) ? "yes" : "no";
             questionsAndAnswers[i][1] = rightAnswer;
         }
-        Engine.gameEngine(exercise, questionsAndAnswers);
+        Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
-    public static String generateRightAnswer(int number) {
+    public static boolean generateRightAnswer(int number) {
         if (number < 2) {
-            return "no";
+            return false;
         }
         for (int i = 2; i <= number / 2; i++) {
             if (number % i == 0) {
-                return "no";
+                return false;
             }
         }
-        return "yes";
+        return false;
     }
 }

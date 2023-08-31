@@ -31,23 +31,13 @@ public class App {
 
         System.out.println("Your choice: " + gameNumber);
 
-        if (gameNumber == greet) {
-            Cli.greeting();
-        }
-        if (gameNumber == even) {
-            Even.startEvenGame();
-        }
-        if (gameNumber == calc) {
-            Calc.startCalcGame();
-        }
-        if (gameNumber == gcd) {
-            GreatestCommonDivisor.startGreatestCommonDivisor();
-        }
-        if (gameNumber == progression) {
-            Progression.startProgressionGame();
-        }
-        if (gameNumber == prime) {
-            Prime.startPrimeGame();
+        switch (gameNumber) {
+            case greet -> Cli.greeting();
+            case even -> Even.startEvenGame();
+            case calc -> Calc.startCalcGame();
+            case gcd -> GreatestCommonDivisor.startGreatestCommonDivisor();
+            case progression -> Progression.startProgressionGame();
+            case prime -> Prime.startPrimeGame();
         }
     }
 }

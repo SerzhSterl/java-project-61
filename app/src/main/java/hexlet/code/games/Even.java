@@ -4,27 +4,22 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Even {
+    final static String EXERCISE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    final static int RAND_BOUND = 100;
     public static void startEvenGame() {
-        final String exercise = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String rightAnswer;
-        final int randBound = 100;
-        int number;
 
-        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS][2];
-       // String[] numbers = new String[Engine.GAME_STEPS];
+        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
 
-        for (int i = 0; i < Engine.GAME_STEPS; i++) {
-            number = Util.generateRandomNumbers(randBound);
+        for (int i = 0; i < Engine.GAME_STEPS_COUNT; i++) {
+            int number = Util.generateRandomNumbers(RAND_BOUND);
             questionsAndAnswers[i][0] = Integer.toString(number);
 
-            rightAnswer = Even.generateRightAnswer(number);
+            String rightAnswer = generateRightAnswer(number) ? "yes" : "no";
             questionsAndAnswers[i][1] = rightAnswer;
         }
-        Engine.gameEngine(exercise, questionsAndAnswers);
+        Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
-    public static String generateRightAnswer(int number) {
-        String rightAnswer;
-        rightAnswer =  (number % 2 == 0) ? "yes" : "no";
-        return rightAnswer;
+    public static boolean generateRightAnswer(int number) {
+        return number % 2 == 0;
     }
 }

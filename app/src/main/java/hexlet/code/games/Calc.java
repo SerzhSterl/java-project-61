@@ -4,41 +4,41 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Calc {
+    final static String EXERCISE = "What is the result of the expression?";
+    final static int RAND_BOUND = 10;
+    final static int BOUND_NUMBER_OF_EXPRESSIONS = 3;
     public static void startCalcGame() {
-        final String exercise = "What is the result of the expression?";
-        final int randBound = 10;
-        final int boundNumberOfExpressions = 3;
-        int rightAnswer;
 
-        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
 
-        for (int i = 0; i < Engine.GAME_STEPS; i++) {
-
-            var numberOfExpression = Util.generateRandomNumbers(boundNumberOfExpressions);
-            var firstNumber = Util.generateRandomNumbers(randBound);
-            var secondNumber = Util.generateRandomNumbers(randBound);
-
-            if (numberOfExpression == 0) {
-                rightAnswer = firstNumber + secondNumber;
-                String question = firstNumber + " + " + secondNumber;
-                questionsAndAnswers[i][0] = question;
-                questionsAndAnswers[i][1] = Integer.toString(rightAnswer);
-            }
-
-            if (numberOfExpression == 1) {
-                rightAnswer = firstNumber * secondNumber;
-                String question = firstNumber + " * " + secondNumber;
-                questionsAndAnswers[i][0] = question;
-                questionsAndAnswers[i][1] = Integer.toString(rightAnswer);
-            }
-
-            if (numberOfExpression == 2) {
-                rightAnswer = firstNumber - secondNumber;
-                String question = firstNumber + " - " + secondNumber;
-                questionsAndAnswers[i][0] = question;
-                questionsAndAnswers[i][1] = Integer.toString(rightAnswer);
-            }
+        for (int i = 0; i < Engine.GAME_STEPS_COUNT; i++) {
+            questionsAndAnswers[i] = generateData();
         }
-        Engine.gameEngine(exercise, questionsAndAnswers);
+        Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
+    }
+   public static int generateNumber(int firstNumber, int secondNumber, String operation) {
+        if (operation.equals("+")) {
+            return firstNumber + secondNumber;
+        } else if (operation.equals("-")) {
+            return firstNumber - secondNumber;
+        } else {
+            return firstNumber * secondNumber;
+        }
+    }
+    public static String[] generateData() {
+
+        int numberOfExpression = Util.generateRandomNumbers(BOUND_NUMBER_OF_EXPRESSIONS);
+        int firstNumber = Util.generateRandomNumbers(RAND_BOUND);
+        int secondNumber = Util.generateRandomNumbers(RAND_BOUND);
+        String operation = String.valueOf("+-*".charAt(numberOfExpression));
+
+        String question = firstNumber + " " + operation + " " + secondNumber;
+        String rightAnswer = String.valueOf(generateNumber(firstNumber, secondNumber, operation));
+
+        String[] data = new String[2];
+        data[0] = question;
+        data[1] = rightAnswer;
+        return data;
+
     }
 }

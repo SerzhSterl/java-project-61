@@ -4,41 +4,35 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Progression {
+    final static String EXERCISE = "What number is missing in the progression?";
+    final static int RAND_BOUND_COEFFICIENT = 20;
+    final static int RAND_BOUND_ARRAY = 10;
+    final static int ARR_SIZE = 10;
+    final static int FIRST_RAND_NUMBER_BOUND = 20;
     public static void startProgressionGame() {
 
-        final String exercise = "What number is missing in the progression?";
+        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
 
-        final int randBoundCoefficient = 20;
-        final int randBoundArray = 10;
-        final int arrSize = 10;
-        final int firstRandNumberBound = 20;
-        int firstRandNumber;
-        int randNumber;
-        int progressionCoefficient;
-        int rightAnswer;
+        for (int i = 0; i < Engine.GAME_STEPS_COUNT; i++) {
 
-        String[][] questionsAndAnswers = new String[Engine.GAME_STEPS][2];
+            int progressionCoefficient = Util.generateRandomNumbers(RAND_BOUND_COEFFICIENT);
+            int firstRandNumber = Util.generateRandomNumbers(FIRST_RAND_NUMBER_BOUND);
 
-        for (int i = 0; i < Engine.GAME_STEPS; i++) {
+            int[] progressionArr = generateProgression(firstRandNumber, progressionCoefficient, ARR_SIZE);
 
-            progressionCoefficient = Util.generateRandomNumbers(randBoundCoefficient);
-            firstRandNumber = Util.generateRandomNumbers(firstRandNumberBound);
-
-            int[] progressionArr = generateProgression(firstRandNumber, progressionCoefficient, arrSize);
-
-            randNumber = Util.generateRandomNumbers(randBoundArray);
-            rightAnswer = progressionArr[randNumber];
+            int randNumber = Util.generateRandomNumbers(RAND_BOUND_ARRAY);
+            int rightAnswer = progressionArr[randNumber];
             questionsAndAnswers[i][1] = Integer.toString(rightAnswer);
 
-            String[] progressionToString = new String[arrSize];
+            String[] progressionToString = new String[ARR_SIZE];
 
-            for (int j = 0; j < arrSize; j++) {
+            for (int j = 0; j < ARR_SIZE; j++) {
                 progressionToString[j] = String.valueOf(progressionArr[j]);
                 progressionToString[randNumber] = "..";
                 questionsAndAnswers[i][0] = String.join(" ", progressionToString);
             }
         }
-        Engine.gameEngine(exercise, questionsAndAnswers);
+        Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
     public static int[] generateProgression(int firstRandNumber, int progressionCoefficient, int arrSize) {
 
