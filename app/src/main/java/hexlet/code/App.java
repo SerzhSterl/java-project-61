@@ -38,6 +38,7 @@ public class App {
             case gcd -> GreatestCommonDivisor.startGreatestCommonDivisor();
             case progression -> Progression.startProgressionGame();
             case prime -> Prime.startPrimeGame();
+            default -> throw new Error("\"" + gameNumber + "\"" + " - incorrect input.");
         }
     }
 }

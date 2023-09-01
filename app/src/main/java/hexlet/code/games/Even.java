@@ -4,8 +4,8 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Even {
-    final static String EXERCISE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    final static int RAND_BOUND = 100;
+    private static final String EXERCISE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final int RAND_BOUND = 100;
     public static void startEvenGame() {
 
         String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
