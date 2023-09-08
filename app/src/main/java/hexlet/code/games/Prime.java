@@ -15,12 +15,12 @@ public class Prime {
             int number = Util.generateRandomNumbers(RAND_BOUND);
             questionsAndAnswers[i][0] = Integer.toString(number);
 
-            String rightAnswer = generateRightAnswer(number) ? "yes" : "no";
+            String rightAnswer = isPrime(number) ? "yes" : "no";
             questionsAndAnswers[i][1] = rightAnswer;
         }
         Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
-    public static boolean generateRightAnswer(int number) {
+    public static boolean isPrime(int number) {
         if (number < 2) {
             return false;
         }

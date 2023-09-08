@@ -11,15 +11,31 @@ public class Even {
         String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
 
         for (int i = 0; i < Engine.GAME_STEPS_COUNT; i++) {
-            int number = Util.generateRandomNumbers(RAND_BOUND);
-            questionsAndAnswers[i][0] = Integer.toString(number);
+            questionsAndAnswers[i] = generateData();
+            //int number = Util.generateRandomNumbers(RAND_BOUND);
+            //questionsAndAnswers[i][0] = Integer.toString(number);
 
-            String rightAnswer = generateRightAnswer(number) ? "yes" : "no";
-            questionsAndAnswers[i][1] = rightAnswer;
+            //String rightAnswer = isEven(number) ? "yes" : "no";
+            //questionsAndAnswers[i][1] = rightAnswer;
         }
         Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
-    public static boolean generateRightAnswer(int number) {
+    public static boolean isEven(int number) {
         return number % 2 == 0;
+    }
+
+    public static String[] generateData() {
+
+        int number = Util.generateRandomNumbers(RAND_BOUND);
+
+        //String rightAnswer = String.valueOf(isEven(number));
+        String rightAnswer = isEven(number) ? "yes" : "no";
+        String question = String.valueOf(number);
+
+        String[] data = new String[2];
+        data[0] = question;
+        data[1] = rightAnswer;
+        return data;
+
     }
 }

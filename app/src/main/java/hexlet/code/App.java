@@ -10,12 +10,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        final var greet = 1;
-        final var even = 2;
-        final var calc = 3;
-        final var gcd = 4;
-        final var progression = 5;
-        final var prime = 6;
 
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -27,18 +21,18 @@ public class App {
         System.out.println("0 - Exit");
 
         Scanner console = new Scanner(System.in);
-        var gameNumber = console.nextInt();
+        var gameNumber = console.next();
 
         System.out.println("Your choice: " + gameNumber);
 
         switch (gameNumber) {
-            case greet -> Cli.greeting();
-            case even -> Even.startEvenGame();
-            case calc -> Calc.startCalcGame();
-            case gcd -> GreatestCommonDivisor.startGreatestCommonDivisor();
-            case progression -> Progression.startProgressionGame();
-            case prime -> Prime.startPrimeGame();
-            default -> throw new Error("\"" + gameNumber + "\"" + " - incorrect input.");
+            case "1" -> Cli.greeting();
+            case "2" -> Even.startEvenGame();
+            case "3" -> Calc.startCalcGame();
+            case "4" -> GreatestCommonDivisor.startGreatestCommonDivisor();
+            case "5" -> Progression.startProgressionGame();
+            case "6" -> Prime.startPrimeGame();
+            default -> throw new RuntimeException("\"" + gameNumber + "\"" + " - incorrect input.");
         }
     }
 }

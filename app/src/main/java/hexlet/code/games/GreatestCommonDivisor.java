@@ -17,12 +17,12 @@ public class GreatestCommonDivisor {
 
             String question =  firstNumber + " " + secondNumber;
 
-            questionsAndAnswers[i][1] = Integer.toString(GreatestCommonDivisor.generateGCD(firstNumber, secondNumber));
+            questionsAndAnswers[i][1] = Integer.toString(GreatestCommonDivisor.calculateGCD(firstNumber, secondNumber));
             questionsAndAnswers[i][0] = question;
         }
         Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
-    public static int generateGCD(int firstNumber, int secondNumber) {
+    public static int calculateGCD(int firstNumber, int secondNumber) {
         int rightAnswer;
         while (firstNumber != 0 && secondNumber != 0) {
             if (firstNumber > secondNumber) {
