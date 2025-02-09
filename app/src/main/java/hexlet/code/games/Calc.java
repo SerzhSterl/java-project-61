@@ -17,6 +17,7 @@ public class Calc {
         Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
     public static int generateNumber(int firstNumber, int secondNumber, String operation) {
+
         if (operation.equals("+")) {
             return firstNumber + secondNumber;
         } else if (operation.equals("-")) {
