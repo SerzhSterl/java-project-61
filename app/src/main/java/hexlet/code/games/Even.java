@@ -12,11 +12,6 @@ public class Even {
 
         for (int i = 0; i < Engine.GAME_STEPS_COUNT; i++) {
             questionsAndAnswers[i] = generateData();
-            //int number = Util.generateRandomNumbers(RAND_BOUND);
-            //questionsAndAnswers[i][0] = Integer.toString(number);
-
-            //String rightAnswer = isEven(number) ? "yes" : "no";
-            //questionsAndAnswers[i][1] = rightAnswer;
         }
         Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
@@ -28,7 +23,6 @@ public class Even {
 
         int number = Util.generateRandomNumbers(RAND_BOUND);
 
-        //String rightAnswer = String.valueOf(isEven(number));
         String rightAnswer = isEven(number) ? "yes" : "no";
         String question = String.valueOf(number);
 

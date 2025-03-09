@@ -16,7 +16,7 @@ public class Calc {
         }
         Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
-    public static int generateNumber(int firstNumber, int secondNumber, String operation) {
+    public static int calculate(int firstNumber, int secondNumber, String operation) {
 
         if (operation.equals("+")) {
             return firstNumber + secondNumber;
@@ -34,7 +34,7 @@ public class Calc {
         String operation = String.valueOf("+-*".charAt(numberOfExpression));
 
         String question = firstNumber + " " + operation + " " + secondNumber;
-        String rightAnswer = String.valueOf(generateNumber(firstNumber, secondNumber, operation));
+        String rightAnswer = String.valueOf(calculate(firstNumber, secondNumber, operation));
 
         String[] data = new String[2];
         data[0] = question;
