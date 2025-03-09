@@ -4,9 +4,11 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Calc {
+
     private static final String EXERCISE = "What is the result of the expression?";
     private static final int RAND_BOUND = 10;
     private static final int BOUND_NUMBER_OF_EXPRESSIONS = 3;
+
     public static void startCalcGame() {
 
         String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
@@ -26,6 +28,7 @@ public class Calc {
             return firstNumber * secondNumber;
         }
     }
+
     public static String[] generateData() {
 
         int numberOfExpression = Util.generateRandomNumbers(BOUND_NUMBER_OF_EXPRESSIONS);
@@ -39,7 +42,7 @@ public class Calc {
         String[] data = new String[2];
         data[0] = question;
         data[1] = rightAnswer;
-        return data;
 
+        return data;
     }
 }

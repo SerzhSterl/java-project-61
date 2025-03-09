@@ -6,6 +6,7 @@ import hexlet.code.Util;
 public class Even {
     private static final String EXERCISE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final int RAND_BOUND = 100;
+
     public static void startEvenGame() {
 
         String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
@@ -15,6 +16,7 @@ public class Even {
         }
         Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
+
     public static boolean isEven(int number) {
         return number % 2 == 0;
     }
@@ -29,7 +31,7 @@ public class Even {
         String[] data = new String[2];
         data[0] = question;
         data[1] = rightAnswer;
-        return data;
 
+        return data;
     }
 }

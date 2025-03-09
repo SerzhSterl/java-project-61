@@ -4,8 +4,10 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class GreatestCommonDivisor {
+
     private static final String EXERCISE = "Find the greatest common divisor of given numbers.";
     private static final int RAND_BOUND = 100;
+
     public static void startGreatestCommonDivisor() {
 
         String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
@@ -22,6 +24,7 @@ public class GreatestCommonDivisor {
         }
         Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
+
     public static int calculateGCD(int firstNumber, int secondNumber) {
         int rightAnswer;
         while (firstNumber != 0 && secondNumber != 0) {
@@ -32,6 +35,7 @@ public class GreatestCommonDivisor {
             }
         }
         rightAnswer = firstNumber + secondNumber;
+
         return rightAnswer;
     }
 }

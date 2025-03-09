@@ -4,11 +4,13 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Progression {
+
     private static final String EXERCISE = "What number is missing in the progression?";
     private static final int RAND_BOUND_COEFFICIENT = 20;
     private static final int RAND_BOUND_ARRAY = 10;
     private static final int ARR_SIZE = 10;
     private static final int FIRST_RAND_NUMBER_BOUND = 20;
+
     public static void startProgressionGame() {
 
         String[][] questionsAndAnswers = new String[Engine.GAME_STEPS_COUNT][2];
@@ -34,6 +36,7 @@ public class Progression {
         }
         Engine.gameEngineRun(EXERCISE, questionsAndAnswers);
     }
+
     public static int[] generateProgression(int firstRandNumber, int progressionCoefficient, int arrSize) {
 
         int[] progressionArr = new int[arrSize];
